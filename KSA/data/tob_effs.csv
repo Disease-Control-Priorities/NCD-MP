@@ -1,0 +1,9 @@
+Code,Intervention,Target,Age,RRR,Source
+1.1,Develop and conduct public awareness interventions that discourage non- smoking youths from initiating tobacco use,initiation,10 to 25,0.28,0.1
+1.2,Impose plain packaging for e-cigarettes,cessation,all,0.23,0.02345
+1.3,Implement media campaigns to raise awareness about the dangers of tobacco use,both,all,0.14,0.065
+1.4,Expand Restrictions on Tobacco Advertising in all Social Media platforms,initiation,10 to 25,0.22,0.08
+1.5,Enforce the prohibition of smoking in indoor workplaces and public places,cessation,all,0.5,0.05
+1.7,Increase Taxes On Smoked Tobacco Products,both,all,0.66,0.29
+1.8,Design and implement Tobacco Health Counselor Training Programs,cessation,all,0.5,0.05
+1.9,Design and implement Tobacco Cessation Services Enhancement Program,cessation,all,0.5,0.05

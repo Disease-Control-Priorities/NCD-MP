@@ -1,0 +1,589 @@
+"","Risk factor","Cause","Country","Age","Sex","Category","group_id","RR","Year","Proportion"
+"1","tobacco","Breast cancer","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"2","tobacco","Breast cancer","Saudi Arabia","20-24","Female","Smoker",2,1.24,2018,0.02
+"3","tobacco","Breast cancer","Saudi Arabia","20-24","Female","Exsmoker",3,1.13,2018,0.002
+"4","tobacco","Breast cancer","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"5","tobacco","Breast cancer","Saudi Arabia","25-29","Female","Smoker",2,1.24,2018,0.02
+"6","tobacco","Breast cancer","Saudi Arabia","25-29","Female","Exsmoker",3,1.13,2018,0.002
+"7","tobacco","Breast cancer","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"8","tobacco","Breast cancer","Saudi Arabia","30-34","Female","Smoker",2,1.24,2018,0.02
+"9","tobacco","Breast cancer","Saudi Arabia","30-34","Female","Exsmoker",3,1.13,2018,0.002
+"10","tobacco","Breast cancer","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"11","tobacco","Breast cancer","Saudi Arabia","35-39","Female","Smoker",2,1.24,2018,0.02
+"12","tobacco","Breast cancer","Saudi Arabia","35-39","Female","Exsmoker",3,1.13,2018,0.002
+"13","tobacco","Breast cancer","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"14","tobacco","Breast cancer","Saudi Arabia","40-44","Female","Smoker",2,1.24,2018,0.02
+"15","tobacco","Breast cancer","Saudi Arabia","40-44","Female","Exsmoker",3,1.13,2018,0.002
+"16","tobacco","Breast cancer","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"17","tobacco","Breast cancer","Saudi Arabia","45-49","Female","Smoker",2,1.24,2018,0.02
+"18","tobacco","Breast cancer","Saudi Arabia","45-49","Female","Exsmoker",3,1.13,2018,0.002
+"19","tobacco","Breast cancer","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"20","tobacco","Breast cancer","Saudi Arabia","50-54","Female","Smoker",2,1.24,2018,0.02
+"21","tobacco","Breast cancer","Saudi Arabia","50-54","Female","Exsmoker",3,1.13,2018,0.002
+"22","tobacco","Breast cancer","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"23","tobacco","Breast cancer","Saudi Arabia","55-59","Female","Smoker",2,1.24,2018,0.02
+"24","tobacco","Breast cancer","Saudi Arabia","55-59","Female","Exsmoker",3,1.13,2018,0.002
+"25","tobacco","Breast cancer","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"26","tobacco","Breast cancer","Saudi Arabia","60-64","Female","Smoker",2,1.24,2018,0.02
+"27","tobacco","Breast cancer","Saudi Arabia","60-64","Female","Exsmoker",3,1.13,2018,0.002
+"28","tobacco","Breast cancer","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"29","tobacco","Breast cancer","Saudi Arabia","65-69","Female","Smoker",2,1.24,2018,0.02
+"30","tobacco","Breast cancer","Saudi Arabia","65-69","Female","Exsmoker",3,1.13,2018,0.002
+"31","tobacco","Breast cancer","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"32","tobacco","Breast cancer","Saudi Arabia","70-74","Female","Smoker",2,1.24,2018,0.02
+"33","tobacco","Breast cancer","Saudi Arabia","70-74","Female","Exsmoker",3,1.13,2018,0.002
+"34","tobacco","Breast cancer","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"35","tobacco","Breast cancer","Saudi Arabia","75-79","Female","Smoker",2,1.24,2018,0.02
+"36","tobacco","Breast cancer","Saudi Arabia","75-79","Female","Exsmoker",3,1.13,2018,0.002
+"37","tobacco","Breast cancer","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"38","tobacco","Breast cancer","Saudi Arabia","80-84","Female","Smoker",2,1.24,2018,0.02
+"39","tobacco","Breast cancer","Saudi Arabia","80-84","Female","Exsmoker",3,1.13,2018,0.002
+"40","tobacco","Breast cancer","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"41","tobacco","Breast cancer","Saudi Arabia","85plus","Female","Smoker",2,1.24,2018,0.02
+"42","tobacco","Breast cancer","Saudi Arabia","85plus","Female","Exsmoker",3,1.13,2018,0.002
+"43","tobacco","Cervical cancer","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"44","tobacco","Cervical cancer","Saudi Arabia","20-24","Female","Smoker",2,2.03,2018,0.02
+"45","tobacco","Cervical cancer","Saudi Arabia","20-24","Female","Exsmoker",3,1.5,2018,0.002
+"46","tobacco","Cervical cancer","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"47","tobacco","Cervical cancer","Saudi Arabia","25-29","Female","Smoker",2,2.03,2018,0.02
+"48","tobacco","Cervical cancer","Saudi Arabia","25-29","Female","Exsmoker",3,1.5,2018,0.002
+"49","tobacco","Cervical cancer","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"50","tobacco","Cervical cancer","Saudi Arabia","30-34","Female","Smoker",2,2.03,2018,0.02
+"51","tobacco","Cervical cancer","Saudi Arabia","30-34","Female","Exsmoker",3,1.5,2018,0.002
+"52","tobacco","Cervical cancer","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"53","tobacco","Cervical cancer","Saudi Arabia","35-39","Female","Smoker",2,2.03,2018,0.02
+"54","tobacco","Cervical cancer","Saudi Arabia","35-39","Female","Exsmoker",3,1.5,2018,0.002
+"55","tobacco","Cervical cancer","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"56","tobacco","Cervical cancer","Saudi Arabia","40-44","Female","Smoker",2,2.03,2018,0.02
+"57","tobacco","Cervical cancer","Saudi Arabia","40-44","Female","Exsmoker",3,1.5,2018,0.002
+"58","tobacco","Cervical cancer","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"59","tobacco","Cervical cancer","Saudi Arabia","45-49","Female","Smoker",2,2.03,2018,0.02
+"60","tobacco","Cervical cancer","Saudi Arabia","45-49","Female","Exsmoker",3,1.5,2018,0.002
+"61","tobacco","Cervical cancer","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"62","tobacco","Cervical cancer","Saudi Arabia","50-54","Female","Smoker",2,2.03,2018,0.02
+"63","tobacco","Cervical cancer","Saudi Arabia","50-54","Female","Exsmoker",3,1.5,2018,0.002
+"64","tobacco","Cervical cancer","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"65","tobacco","Cervical cancer","Saudi Arabia","55-59","Female","Smoker",2,2.03,2018,0.02
+"66","tobacco","Cervical cancer","Saudi Arabia","55-59","Female","Exsmoker",3,1.5,2018,0.002
+"67","tobacco","Cervical cancer","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"68","tobacco","Cervical cancer","Saudi Arabia","60-64","Female","Smoker",2,2.03,2018,0.02
+"69","tobacco","Cervical cancer","Saudi Arabia","60-64","Female","Exsmoker",3,1.5,2018,0.002
+"70","tobacco","Cervical cancer","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"71","tobacco","Cervical cancer","Saudi Arabia","65-69","Female","Smoker",2,2.03,2018,0.02
+"72","tobacco","Cervical cancer","Saudi Arabia","65-69","Female","Exsmoker",3,1.5,2018,0.002
+"73","tobacco","Cervical cancer","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"74","tobacco","Cervical cancer","Saudi Arabia","70-74","Female","Smoker",2,2.03,2018,0.02
+"75","tobacco","Cervical cancer","Saudi Arabia","70-74","Female","Exsmoker",3,1.5,2018,0.002
+"76","tobacco","Cervical cancer","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"77","tobacco","Cervical cancer","Saudi Arabia","75-79","Female","Smoker",2,2.03,2018,0.02
+"78","tobacco","Cervical cancer","Saudi Arabia","75-79","Female","Exsmoker",3,1.5,2018,0.002
+"79","tobacco","Cervical cancer","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"80","tobacco","Cervical cancer","Saudi Arabia","80-84","Female","Smoker",2,2.03,2018,0.02
+"81","tobacco","Cervical cancer","Saudi Arabia","80-84","Female","Exsmoker",3,1.5,2018,0.002
+"82","tobacco","Cervical cancer","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"83","tobacco","Cervical cancer","Saudi Arabia","85plus","Female","Smoker",2,2.03,2018,0.02
+"84","tobacco","Cervical cancer","Saudi Arabia","85plus","Female","Exsmoker",3,1.5,2018,0.002
+"85","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"86","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Male","Smoker",2,1.42,2018,0.312
+"87","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Male","Exsmoker",3,1.16,2018,0.0312
+"88","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"89","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Female","Smoker",2,1.33,2018,0.02
+"90","tobacco","Diabetes mellitus type 2","Saudi Arabia","20-24","Female","Exsmoker",3,1.12,2018,0.002
+"91","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"92","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Male","Smoker",2,1.42,2018,0.312
+"93","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Male","Exsmoker",3,1.16,2018,0.0312
+"94","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"95","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Female","Smoker",2,1.33,2018,0.02
+"96","tobacco","Diabetes mellitus type 2","Saudi Arabia","25-29","Female","Exsmoker",3,1.12,2018,0.002
+"97","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"98","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Male","Smoker",2,1.42,2018,0.312
+"99","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Male","Exsmoker",3,1.16,2018,0.0312
+"100","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"101","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Female","Smoker",2,1.33,2018,0.02
+"102","tobacco","Diabetes mellitus type 2","Saudi Arabia","30-34","Female","Exsmoker",3,1.12,2018,0.002
+"103","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"104","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Male","Smoker",2,1.42,2018,0.312
+"105","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Male","Exsmoker",3,1.16,2018,0.0312
+"106","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"107","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Female","Smoker",2,1.33,2018,0.02
+"108","tobacco","Diabetes mellitus type 2","Saudi Arabia","35-39","Female","Exsmoker",3,1.12,2018,0.002
+"109","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"110","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Male","Smoker",2,1.42,2018,0.312
+"111","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Male","Exsmoker",3,1.16,2018,0.0312
+"112","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"113","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Female","Smoker",2,1.33,2018,0.02
+"114","tobacco","Diabetes mellitus type 2","Saudi Arabia","40-44","Female","Exsmoker",3,1.12,2018,0.002
+"115","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"116","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Male","Smoker",2,1.42,2018,0.312
+"117","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Male","Exsmoker",3,1.16,2018,0.0312
+"118","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"119","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Female","Smoker",2,1.33,2018,0.02
+"120","tobacco","Diabetes mellitus type 2","Saudi Arabia","45-49","Female","Exsmoker",3,1.12,2018,0.002
+"121","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"122","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Male","Smoker",2,1.42,2018,0.312
+"123","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Male","Exsmoker",3,1.16,2018,0.0312
+"124","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"125","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Female","Smoker",2,1.33,2018,0.02
+"126","tobacco","Diabetes mellitus type 2","Saudi Arabia","50-54","Female","Exsmoker",3,1.12,2018,0.002
+"127","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"128","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Male","Smoker",2,1.42,2018,0.312
+"129","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Male","Exsmoker",3,1.16,2018,0.0312
+"130","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"131","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Female","Smoker",2,1.33,2018,0.02
+"132","tobacco","Diabetes mellitus type 2","Saudi Arabia","55-59","Female","Exsmoker",3,1.12,2018,0.002
+"133","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"134","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Male","Smoker",2,1.42,2018,0.312
+"135","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Male","Exsmoker",3,1.16,2018,0.0312
+"136","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"137","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Female","Smoker",2,1.33,2018,0.02
+"138","tobacco","Diabetes mellitus type 2","Saudi Arabia","60-64","Female","Exsmoker",3,1.12,2018,0.002
+"139","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"140","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Male","Smoker",2,1.42,2018,0.312
+"141","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Male","Exsmoker",3,1.16,2018,0.0312
+"142","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"143","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Female","Smoker",2,1.33,2018,0.02
+"144","tobacco","Diabetes mellitus type 2","Saudi Arabia","65-69","Female","Exsmoker",3,1.12,2018,0.002
+"145","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"146","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Male","Smoker",2,1.42,2018,0.312
+"147","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Male","Exsmoker",3,1.16,2018,0.0312
+"148","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"149","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Female","Smoker",2,1.33,2018,0.02
+"150","tobacco","Diabetes mellitus type 2","Saudi Arabia","70-74","Female","Exsmoker",3,1.12,2018,0.002
+"151","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"152","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Male","Smoker",2,1.42,2018,0.312
+"153","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Male","Exsmoker",3,1.16,2018,0.0312
+"154","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"155","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Female","Smoker",2,1.33,2018,0.02
+"156","tobacco","Diabetes mellitus type 2","Saudi Arabia","75-79","Female","Exsmoker",3,1.12,2018,0.002
+"157","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"158","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Male","Smoker",2,1.42,2018,0.312
+"159","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Male","Exsmoker",3,1.16,2018,0.0312
+"160","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"161","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Female","Smoker",2,1.33,2018,0.02
+"162","tobacco","Diabetes mellitus type 2","Saudi Arabia","80-84","Female","Exsmoker",3,1.12,2018,0.002
+"163","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"164","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Male","Smoker",2,1.42,2018,0.312
+"165","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Male","Exsmoker",3,1.16,2018,0.0312
+"166","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"167","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Female","Smoker",2,1.33,2018,0.02
+"168","tobacco","Diabetes mellitus type 2","Saudi Arabia","85plus","Female","Exsmoker",3,1.12,2018,0.002
+"169","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"170","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Male","Smoker",2,1.61,2018,0.312
+"171","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Male","Exsmoker",3,1.21,2018,0.0312
+"172","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"173","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Female","Smoker",2,1.61,2018,0.02
+"174","tobacco","Hypertensive heart disease","Saudi Arabia","20-24","Female","Exsmoker",3,1.21,2018,0.002
+"175","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"176","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Male","Smoker",2,1.61,2018,0.312
+"177","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Male","Exsmoker",3,1.21,2018,0.0312
+"178","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"179","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Female","Smoker",2,1.61,2018,0.02
+"180","tobacco","Hypertensive heart disease","Saudi Arabia","25-29","Female","Exsmoker",3,1.21,2018,0.002
+"181","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"182","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Male","Smoker",2,1.61,2018,0.312
+"183","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Male","Exsmoker",3,1.21,2018,0.0312
+"184","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"185","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Female","Smoker",2,1.61,2018,0.02
+"186","tobacco","Hypertensive heart disease","Saudi Arabia","30-34","Female","Exsmoker",3,1.21,2018,0.002
+"187","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"188","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Male","Smoker",2,1.61,2018,0.312
+"189","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Male","Exsmoker",3,1.21,2018,0.0312
+"190","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"191","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Female","Smoker",2,1.61,2018,0.02
+"192","tobacco","Hypertensive heart disease","Saudi Arabia","35-39","Female","Exsmoker",3,1.21,2018,0.002
+"193","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"194","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Male","Smoker",2,1.61,2018,0.312
+"195","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Male","Exsmoker",3,1.21,2018,0.0312
+"196","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"197","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Female","Smoker",2,1.61,2018,0.02
+"198","tobacco","Hypertensive heart disease","Saudi Arabia","40-44","Female","Exsmoker",3,1.21,2018,0.002
+"199","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"200","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Male","Smoker",2,1.61,2018,0.312
+"201","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Male","Exsmoker",3,1.21,2018,0.0312
+"202","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"203","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Female","Smoker",2,1.61,2018,0.02
+"204","tobacco","Hypertensive heart disease","Saudi Arabia","45-49","Female","Exsmoker",3,1.21,2018,0.002
+"205","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"206","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Male","Smoker",2,1.61,2018,0.312
+"207","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Male","Exsmoker",3,1.21,2018,0.0312
+"208","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"209","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Female","Smoker",2,1.61,2018,0.02
+"210","tobacco","Hypertensive heart disease","Saudi Arabia","50-54","Female","Exsmoker",3,1.21,2018,0.002
+"211","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"212","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Male","Smoker",2,1.61,2018,0.312
+"213","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Male","Exsmoker",3,1.21,2018,0.0312
+"214","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"215","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Female","Smoker",2,1.61,2018,0.02
+"216","tobacco","Hypertensive heart disease","Saudi Arabia","55-59","Female","Exsmoker",3,1.21,2018,0.002
+"217","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"218","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Male","Smoker",2,1.61,2018,0.312
+"219","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Male","Exsmoker",3,1.21,2018,0.0312
+"220","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"221","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Female","Smoker",2,1.61,2018,0.02
+"222","tobacco","Hypertensive heart disease","Saudi Arabia","60-64","Female","Exsmoker",3,1.21,2018,0.002
+"223","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"224","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Male","Smoker",2,1.61,2018,0.312
+"225","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Male","Exsmoker",3,1.21,2018,0.0312
+"226","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"227","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Female","Smoker",2,1.61,2018,0.02
+"228","tobacco","Hypertensive heart disease","Saudi Arabia","65-69","Female","Exsmoker",3,1.21,2018,0.002
+"229","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"230","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Male","Smoker",2,1.61,2018,0.312
+"231","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Male","Exsmoker",3,1.21,2018,0.0312
+"232","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"233","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Female","Smoker",2,1.61,2018,0.02
+"234","tobacco","Hypertensive heart disease","Saudi Arabia","70-74","Female","Exsmoker",3,1.21,2018,0.002
+"235","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"236","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Male","Smoker",2,1.61,2018,0.312
+"237","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Male","Exsmoker",3,1.21,2018,0.0312
+"238","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"239","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Female","Smoker",2,1.61,2018,0.02
+"240","tobacco","Hypertensive heart disease","Saudi Arabia","75-79","Female","Exsmoker",3,1.21,2018,0.002
+"241","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"242","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Male","Smoker",2,1.61,2018,0.312
+"243","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Male","Exsmoker",3,1.21,2018,0.0312
+"244","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"245","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Female","Smoker",2,1.61,2018,0.02
+"246","tobacco","Hypertensive heart disease","Saudi Arabia","80-84","Female","Exsmoker",3,1.21,2018,0.002
+"247","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"248","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Male","Smoker",2,1.61,2018,0.312
+"249","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Male","Exsmoker",3,1.21,2018,0.0312
+"250","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"251","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Female","Smoker",2,1.61,2018,0.02
+"252","tobacco","Hypertensive heart disease","Saudi Arabia","85plus","Female","Exsmoker",3,1.21,2018,0.002
+"253","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"254","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Male","Smoker",2,1.91,2018,0.312
+"255","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Male","Exsmoker",3,1.1,2018,0.0312
+"256","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"257","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Female","Smoker",2,1.91,2018,0.02
+"258","tobacco","Intracerebral hemorrhage","Saudi Arabia","20-24","Female","Exsmoker",3,1.1,2018,0.002
+"259","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"260","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Male","Smoker",2,1.91,2018,0.312
+"261","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Male","Exsmoker",3,1.1,2018,0.0312
+"262","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"263","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Female","Smoker",2,1.91,2018,0.02
+"264","tobacco","Intracerebral hemorrhage","Saudi Arabia","25-29","Female","Exsmoker",3,1.1,2018,0.002
+"265","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"266","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Male","Smoker",2,1.91,2018,0.312
+"267","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Male","Exsmoker",3,1.1,2018,0.0312
+"268","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"269","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Female","Smoker",2,1.91,2018,0.02
+"270","tobacco","Intracerebral hemorrhage","Saudi Arabia","30-34","Female","Exsmoker",3,1.1,2018,0.002
+"271","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"272","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Male","Smoker",2,1.91,2018,0.312
+"273","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Male","Exsmoker",3,1.1,2018,0.0312
+"274","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"275","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Female","Smoker",2,1.91,2018,0.02
+"276","tobacco","Intracerebral hemorrhage","Saudi Arabia","35-39","Female","Exsmoker",3,1.1,2018,0.002
+"277","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"278","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Male","Smoker",2,1.91,2018,0.312
+"279","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Male","Exsmoker",3,1.1,2018,0.0312
+"280","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"281","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Female","Smoker",2,1.91,2018,0.02
+"282","tobacco","Intracerebral hemorrhage","Saudi Arabia","40-44","Female","Exsmoker",3,1.1,2018,0.002
+"283","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"284","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Male","Smoker",2,1.91,2018,0.312
+"285","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Male","Exsmoker",3,1.1,2018,0.0312
+"286","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"287","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Female","Smoker",2,1.91,2018,0.02
+"288","tobacco","Intracerebral hemorrhage","Saudi Arabia","45-49","Female","Exsmoker",3,1.1,2018,0.002
+"289","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"290","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Male","Smoker",2,1.91,2018,0.312
+"291","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Male","Exsmoker",3,1.1,2018,0.0312
+"292","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"293","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Female","Smoker",2,1.91,2018,0.02
+"294","tobacco","Intracerebral hemorrhage","Saudi Arabia","50-54","Female","Exsmoker",3,1.1,2018,0.002
+"295","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"296","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Male","Smoker",2,1.91,2018,0.312
+"297","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Male","Exsmoker",3,1.1,2018,0.0312
+"298","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"299","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Female","Smoker",2,1.91,2018,0.02
+"300","tobacco","Intracerebral hemorrhage","Saudi Arabia","55-59","Female","Exsmoker",3,1.1,2018,0.002
+"301","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"302","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Male","Smoker",2,1.91,2018,0.312
+"303","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Male","Exsmoker",3,1.1,2018,0.0312
+"304","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"305","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Female","Smoker",2,1.91,2018,0.02
+"306","tobacco","Intracerebral hemorrhage","Saudi Arabia","60-64","Female","Exsmoker",3,1.1,2018,0.002
+"307","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"308","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Male","Smoker",2,1.91,2018,0.312
+"309","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Male","Exsmoker",3,1.1,2018,0.0312
+"310","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"311","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Female","Smoker",2,1.91,2018,0.02
+"312","tobacco","Intracerebral hemorrhage","Saudi Arabia","65-69","Female","Exsmoker",3,1.1,2018,0.002
+"313","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"314","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Male","Smoker",2,1.91,2018,0.312
+"315","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Male","Exsmoker",3,1.1,2018,0.0312
+"316","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"317","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Female","Smoker",2,1.91,2018,0.02
+"318","tobacco","Intracerebral hemorrhage","Saudi Arabia","70-74","Female","Exsmoker",3,1.1,2018,0.002
+"319","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"320","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Male","Smoker",2,1.91,2018,0.312
+"321","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Male","Exsmoker",3,1.1,2018,0.0312
+"322","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"323","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Female","Smoker",2,1.91,2018,0.02
+"324","tobacco","Intracerebral hemorrhage","Saudi Arabia","75-79","Female","Exsmoker",3,1.1,2018,0.002
+"325","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"326","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Male","Smoker",2,1.91,2018,0.312
+"327","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Male","Exsmoker",3,1.1,2018,0.0312
+"328","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"329","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Female","Smoker",2,1.91,2018,0.02
+"330","tobacco","Intracerebral hemorrhage","Saudi Arabia","80-84","Female","Exsmoker",3,1.1,2018,0.002
+"331","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"332","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Male","Smoker",2,1.91,2018,0.312
+"333","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Male","Exsmoker",3,1.1,2018,0.0312
+"334","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"335","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Female","Smoker",2,1.91,2018,0.02
+"336","tobacco","Intracerebral hemorrhage","Saudi Arabia","85plus","Female","Exsmoker",3,1.1,2018,0.002
+"337","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"338","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Male","Smoker",2,1.98,2018,0.312
+"339","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Male","Exsmoker",3,1.37,2018,0.0312
+"340","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"341","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Female","Smoker",2,2.59,2018,0.02
+"342","tobacco","Ischemic heart disease","Saudi Arabia","20-24","Female","Exsmoker",3,1.75,2018,0.002
+"343","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"344","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Male","Smoker",2,1.98,2018,0.312
+"345","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Male","Exsmoker",3,1.37,2018,0.0312
+"346","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"347","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Female","Smoker",2,2.59,2018,0.02
+"348","tobacco","Ischemic heart disease","Saudi Arabia","25-29","Female","Exsmoker",3,1.75,2018,0.002
+"349","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"350","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Male","Smoker",2,1.98,2018,0.312
+"351","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Male","Exsmoker",3,1.37,2018,0.0312
+"352","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"353","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Female","Smoker",2,2.59,2018,0.02
+"354","tobacco","Ischemic heart disease","Saudi Arabia","30-34","Female","Exsmoker",3,1.75,2018,0.002
+"355","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"356","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Male","Smoker",2,1.98,2018,0.312
+"357","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Male","Exsmoker",3,1.37,2018,0.0312
+"358","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"359","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Female","Smoker",2,2.59,2018,0.02
+"360","tobacco","Ischemic heart disease","Saudi Arabia","35-39","Female","Exsmoker",3,1.75,2018,0.002
+"361","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"362","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Male","Smoker",2,1.98,2018,0.312
+"363","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Male","Exsmoker",3,1.37,2018,0.0312
+"364","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"365","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Female","Smoker",2,2.59,2018,0.02
+"366","tobacco","Ischemic heart disease","Saudi Arabia","40-44","Female","Exsmoker",3,1.75,2018,0.002
+"367","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"368","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Male","Smoker",2,1.98,2018,0.312
+"369","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Male","Exsmoker",3,1.37,2018,0.0312
+"370","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"371","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Female","Smoker",2,2.59,2018,0.02
+"372","tobacco","Ischemic heart disease","Saudi Arabia","45-49","Female","Exsmoker",3,1.75,2018,0.002
+"373","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"374","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Male","Smoker",2,1.98,2018,0.312
+"375","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Male","Exsmoker",3,1.37,2018,0.0312
+"376","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"377","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Female","Smoker",2,2.59,2018,0.02
+"378","tobacco","Ischemic heart disease","Saudi Arabia","50-54","Female","Exsmoker",3,1.75,2018,0.002
+"379","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"380","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Male","Smoker",2,1.98,2018,0.312
+"381","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Male","Exsmoker",3,1.37,2018,0.0312
+"382","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"383","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Female","Smoker",2,2.59,2018,0.02
+"384","tobacco","Ischemic heart disease","Saudi Arabia","55-59","Female","Exsmoker",3,1.75,2018,0.002
+"385","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"386","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Male","Smoker",2,1.98,2018,0.312
+"387","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Male","Exsmoker",3,1.37,2018,0.0312
+"388","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"389","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Female","Smoker",2,2.59,2018,0.02
+"390","tobacco","Ischemic heart disease","Saudi Arabia","60-64","Female","Exsmoker",3,1.75,2018,0.002
+"391","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"392","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Male","Smoker",2,1.98,2018,0.312
+"393","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Male","Exsmoker",3,1.37,2018,0.0312
+"394","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"395","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Female","Smoker",2,2.59,2018,0.02
+"396","tobacco","Ischemic heart disease","Saudi Arabia","65-69","Female","Exsmoker",3,1.75,2018,0.002
+"397","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"398","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Male","Smoker",2,1.98,2018,0.312
+"399","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Male","Exsmoker",3,1.37,2018,0.0312
+"400","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"401","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Female","Smoker",2,2.59,2018,0.02
+"402","tobacco","Ischemic heart disease","Saudi Arabia","70-74","Female","Exsmoker",3,1.75,2018,0.002
+"403","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"404","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Male","Smoker",2,1.98,2018,0.312
+"405","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Male","Exsmoker",3,1.37,2018,0.0312
+"406","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"407","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Female","Smoker",2,2.59,2018,0.02
+"408","tobacco","Ischemic heart disease","Saudi Arabia","75-79","Female","Exsmoker",3,1.75,2018,0.002
+"409","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"410","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Male","Smoker",2,1.98,2018,0.312
+"411","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Male","Exsmoker",3,1.37,2018,0.0312
+"412","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"413","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Female","Smoker",2,2.59,2018,0.02
+"414","tobacco","Ischemic heart disease","Saudi Arabia","80-84","Female","Exsmoker",3,1.75,2018,0.002
+"415","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"416","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Male","Smoker",2,1.98,2018,0.312
+"417","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Male","Exsmoker",3,1.37,2018,0.0312
+"418","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"419","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Female","Smoker",2,2.59,2018,0.02
+"420","tobacco","Ischemic heart disease","Saudi Arabia","85plus","Female","Exsmoker",3,1.75,2018,0.002
+"421","tobacco","Ischemic stroke","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"422","tobacco","Ischemic stroke","Saudi Arabia","20-24","Male","Smoker",2,1.32,2018,0.312
+"423","tobacco","Ischemic stroke","Saudi Arabia","20-24","Male","Exsmoker",3,0.98,2018,0.0312
+"424","tobacco","Ischemic stroke","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"425","tobacco","Ischemic stroke","Saudi Arabia","20-24","Female","Smoker",2,1.5,2018,0.02
+"426","tobacco","Ischemic stroke","Saudi Arabia","20-24","Female","Exsmoker",3,1.29,2018,0.002
+"427","tobacco","Ischemic stroke","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"428","tobacco","Ischemic stroke","Saudi Arabia","25-29","Male","Smoker",2,1.32,2018,0.312
+"429","tobacco","Ischemic stroke","Saudi Arabia","25-29","Male","Exsmoker",3,0.98,2018,0.0312
+"430","tobacco","Ischemic stroke","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"431","tobacco","Ischemic stroke","Saudi Arabia","25-29","Female","Smoker",2,1.5,2018,0.02
+"432","tobacco","Ischemic stroke","Saudi Arabia","25-29","Female","Exsmoker",3,1.29,2018,0.002
+"433","tobacco","Ischemic stroke","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"434","tobacco","Ischemic stroke","Saudi Arabia","30-34","Male","Smoker",2,1.32,2018,0.312
+"435","tobacco","Ischemic stroke","Saudi Arabia","30-34","Male","Exsmoker",3,0.98,2018,0.0312
+"436","tobacco","Ischemic stroke","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"437","tobacco","Ischemic stroke","Saudi Arabia","30-34","Female","Smoker",2,1.5,2018,0.02
+"438","tobacco","Ischemic stroke","Saudi Arabia","30-34","Female","Exsmoker",3,1.29,2018,0.002
+"439","tobacco","Ischemic stroke","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"440","tobacco","Ischemic stroke","Saudi Arabia","35-39","Male","Smoker",2,1.32,2018,0.312
+"441","tobacco","Ischemic stroke","Saudi Arabia","35-39","Male","Exsmoker",3,0.98,2018,0.0312
+"442","tobacco","Ischemic stroke","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"443","tobacco","Ischemic stroke","Saudi Arabia","35-39","Female","Smoker",2,1.5,2018,0.02
+"444","tobacco","Ischemic stroke","Saudi Arabia","35-39","Female","Exsmoker",3,1.29,2018,0.002
+"445","tobacco","Ischemic stroke","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"446","tobacco","Ischemic stroke","Saudi Arabia","40-44","Male","Smoker",2,1.32,2018,0.312
+"447","tobacco","Ischemic stroke","Saudi Arabia","40-44","Male","Exsmoker",3,0.98,2018,0.0312
+"448","tobacco","Ischemic stroke","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"449","tobacco","Ischemic stroke","Saudi Arabia","40-44","Female","Smoker",2,1.5,2018,0.02
+"450","tobacco","Ischemic stroke","Saudi Arabia","40-44","Female","Exsmoker",3,1.29,2018,0.002
+"451","tobacco","Ischemic stroke","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"452","tobacco","Ischemic stroke","Saudi Arabia","45-49","Male","Smoker",2,1.32,2018,0.312
+"453","tobacco","Ischemic stroke","Saudi Arabia","45-49","Male","Exsmoker",3,0.98,2018,0.0312
+"454","tobacco","Ischemic stroke","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"455","tobacco","Ischemic stroke","Saudi Arabia","45-49","Female","Smoker",2,1.5,2018,0.02
+"456","tobacco","Ischemic stroke","Saudi Arabia","45-49","Female","Exsmoker",3,1.29,2018,0.002
+"457","tobacco","Ischemic stroke","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"458","tobacco","Ischemic stroke","Saudi Arabia","50-54","Male","Smoker",2,1.32,2018,0.312
+"459","tobacco","Ischemic stroke","Saudi Arabia","50-54","Male","Exsmoker",3,0.98,2018,0.0312
+"460","tobacco","Ischemic stroke","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"461","tobacco","Ischemic stroke","Saudi Arabia","50-54","Female","Smoker",2,1.5,2018,0.02
+"462","tobacco","Ischemic stroke","Saudi Arabia","50-54","Female","Exsmoker",3,1.29,2018,0.002
+"463","tobacco","Ischemic stroke","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"464","tobacco","Ischemic stroke","Saudi Arabia","55-59","Male","Smoker",2,1.32,2018,0.312
+"465","tobacco","Ischemic stroke","Saudi Arabia","55-59","Male","Exsmoker",3,0.98,2018,0.0312
+"466","tobacco","Ischemic stroke","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"467","tobacco","Ischemic stroke","Saudi Arabia","55-59","Female","Smoker",2,1.5,2018,0.02
+"468","tobacco","Ischemic stroke","Saudi Arabia","55-59","Female","Exsmoker",3,1.29,2018,0.002
+"469","tobacco","Ischemic stroke","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"470","tobacco","Ischemic stroke","Saudi Arabia","60-64","Male","Smoker",2,1.32,2018,0.312
+"471","tobacco","Ischemic stroke","Saudi Arabia","60-64","Male","Exsmoker",3,0.98,2018,0.0312
+"472","tobacco","Ischemic stroke","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"473","tobacco","Ischemic stroke","Saudi Arabia","60-64","Female","Smoker",2,1.5,2018,0.02
+"474","tobacco","Ischemic stroke","Saudi Arabia","60-64","Female","Exsmoker",3,1.29,2018,0.002
+"475","tobacco","Ischemic stroke","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"476","tobacco","Ischemic stroke","Saudi Arabia","65-69","Male","Smoker",2,1.32,2018,0.312
+"477","tobacco","Ischemic stroke","Saudi Arabia","65-69","Male","Exsmoker",3,0.98,2018,0.0312
+"478","tobacco","Ischemic stroke","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"479","tobacco","Ischemic stroke","Saudi Arabia","65-69","Female","Smoker",2,1.5,2018,0.02
+"480","tobacco","Ischemic stroke","Saudi Arabia","65-69","Female","Exsmoker",3,1.29,2018,0.002
+"481","tobacco","Ischemic stroke","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"482","tobacco","Ischemic stroke","Saudi Arabia","70-74","Male","Smoker",2,1.32,2018,0.312
+"483","tobacco","Ischemic stroke","Saudi Arabia","70-74","Male","Exsmoker",3,0.98,2018,0.0312
+"484","tobacco","Ischemic stroke","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"485","tobacco","Ischemic stroke","Saudi Arabia","70-74","Female","Smoker",2,1.5,2018,0.02
+"486","tobacco","Ischemic stroke","Saudi Arabia","70-74","Female","Exsmoker",3,1.29,2018,0.002
+"487","tobacco","Ischemic stroke","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"488","tobacco","Ischemic stroke","Saudi Arabia","75-79","Male","Smoker",2,1.32,2018,0.312
+"489","tobacco","Ischemic stroke","Saudi Arabia","75-79","Male","Exsmoker",3,0.98,2018,0.0312
+"490","tobacco","Ischemic stroke","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"491","tobacco","Ischemic stroke","Saudi Arabia","75-79","Female","Smoker",2,1.5,2018,0.02
+"492","tobacco","Ischemic stroke","Saudi Arabia","75-79","Female","Exsmoker",3,1.29,2018,0.002
+"493","tobacco","Ischemic stroke","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"494","tobacco","Ischemic stroke","Saudi Arabia","80-84","Male","Smoker",2,1.32,2018,0.312
+"495","tobacco","Ischemic stroke","Saudi Arabia","80-84","Male","Exsmoker",3,0.98,2018,0.0312
+"496","tobacco","Ischemic stroke","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"497","tobacco","Ischemic stroke","Saudi Arabia","80-84","Female","Smoker",2,1.5,2018,0.02
+"498","tobacco","Ischemic stroke","Saudi Arabia","80-84","Female","Exsmoker",3,1.29,2018,0.002
+"499","tobacco","Ischemic stroke","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"500","tobacco","Ischemic stroke","Saudi Arabia","85plus","Male","Smoker",2,1.32,2018,0.312
+"501","tobacco","Ischemic stroke","Saudi Arabia","85plus","Male","Exsmoker",3,0.98,2018,0.0312
+"502","tobacco","Ischemic stroke","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"503","tobacco","Ischemic stroke","Saudi Arabia","85plus","Female","Smoker",2,1.5,2018,0.02
+"504","tobacco","Ischemic stroke","Saudi Arabia","85plus","Female","Exsmoker",3,1.29,2018,0.002
+"505","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Male","Nonsmoker",1,1,2018,0.6568
+"506","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Male","Smoker",2,8.43,2018,0.312
+"507","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Male","Exsmoker",3,4.3,2018,0.0312
+"508","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Female","Nonsmoker",1,1,2018,0.978
+"509","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Female","Smoker",2,8.43,2018,0.02
+"510","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","20-24","Female","Exsmoker",3,4.3,2018,0.002
+"511","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Male","Nonsmoker",1,1,2018,0.6568
+"512","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Male","Smoker",2,8.43,2018,0.312
+"513","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Male","Exsmoker",3,4.3,2018,0.0312
+"514","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Female","Nonsmoker",1,1,2018,0.978
+"515","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Female","Smoker",2,8.43,2018,0.02
+"516","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","25-29","Female","Exsmoker",3,4.3,2018,0.002
+"517","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Male","Nonsmoker",1,1,2018,0.6568
+"518","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Male","Smoker",2,8.43,2018,0.312
+"519","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Male","Exsmoker",3,4.3,2018,0.0312
+"520","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Female","Nonsmoker",1,1,2018,0.978
+"521","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Female","Smoker",2,8.43,2018,0.02
+"522","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","30-34","Female","Exsmoker",3,4.3,2018,0.002
+"523","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Male","Nonsmoker",1,1,2018,0.6568
+"524","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Male","Smoker",2,8.43,2018,0.312
+"525","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Male","Exsmoker",3,4.3,2018,0.0312
+"526","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Female","Nonsmoker",1,1,2018,0.978
+"527","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Female","Smoker",2,8.43,2018,0.02
+"528","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","35-39","Female","Exsmoker",3,4.3,2018,0.002
+"529","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Male","Nonsmoker",1,1,2018,0.6568
+"530","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Male","Smoker",2,8.43,2018,0.312
+"531","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Male","Exsmoker",3,4.3,2018,0.0312
+"532","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Female","Nonsmoker",1,1,2018,0.978
+"533","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Female","Smoker",2,8.43,2018,0.02
+"534","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","40-44","Female","Exsmoker",3,4.3,2018,0.002
+"535","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Male","Nonsmoker",1,1,2018,0.6568
+"536","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Male","Smoker",2,8.43,2018,0.312
+"537","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Male","Exsmoker",3,4.3,2018,0.0312
+"538","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Female","Nonsmoker",1,1,2018,0.978
+"539","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Female","Smoker",2,8.43,2018,0.02
+"540","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","45-49","Female","Exsmoker",3,4.3,2018,0.002
+"541","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Male","Nonsmoker",1,1,2018,0.6568
+"542","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Male","Smoker",2,8.43,2018,0.312
+"543","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Male","Exsmoker",3,4.3,2018,0.0312
+"544","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Female","Nonsmoker",1,1,2018,0.978
+"545","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Female","Smoker",2,8.43,2018,0.02
+"546","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","50-54","Female","Exsmoker",3,4.3,2018,0.002
+"547","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Male","Nonsmoker",1,1,2018,0.6568
+"548","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Male","Smoker",2,8.43,2018,0.312
+"549","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Male","Exsmoker",3,4.3,2018,0.0312
+"550","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Female","Nonsmoker",1,1,2018,0.978
+"551","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Female","Smoker",2,8.43,2018,0.02
+"552","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","55-59","Female","Exsmoker",3,4.3,2018,0.002
+"553","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Male","Nonsmoker",1,1,2018,0.6568
+"554","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Male","Smoker",2,8.43,2018,0.312
+"555","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Male","Exsmoker",3,4.3,2018,0.0312
+"556","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Female","Nonsmoker",1,1,2018,0.978
+"557","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Female","Smoker",2,8.43,2018,0.02
+"558","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","60-64","Female","Exsmoker",3,4.3,2018,0.002
+"559","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Male","Nonsmoker",1,1,2018,0.6568
+"560","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Male","Smoker",2,8.43,2018,0.312
+"561","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Male","Exsmoker",3,4.3,2018,0.0312
+"562","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Female","Nonsmoker",1,1,2018,0.978
+"563","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Female","Smoker",2,8.43,2018,0.02
+"564","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","65-69","Female","Exsmoker",3,4.3,2018,0.002
+"565","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Male","Nonsmoker",1,1,2018,0.6568
+"566","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Male","Smoker",2,8.43,2018,0.312
+"567","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Male","Exsmoker",3,4.3,2018,0.0312
+"568","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Female","Nonsmoker",1,1,2018,0.978
+"569","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Female","Smoker",2,8.43,2018,0.02
+"570","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","70-74","Female","Exsmoker",3,4.3,2018,0.002
+"571","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Male","Nonsmoker",1,1,2018,0.6568
+"572","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Male","Smoker",2,8.43,2018,0.312
+"573","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Male","Exsmoker",3,4.3,2018,0.0312
+"574","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Female","Nonsmoker",1,1,2018,0.978
+"575","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Female","Smoker",2,8.43,2018,0.02
+"576","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","75-79","Female","Exsmoker",3,4.3,2018,0.002
+"577","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Male","Nonsmoker",1,1,2018,0.6568
+"578","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Male","Smoker",2,8.43,2018,0.312
+"579","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Male","Exsmoker",3,4.3,2018,0.0312
+"580","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Female","Nonsmoker",1,1,2018,0.978
+"581","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Female","Smoker",2,8.43,2018,0.02
+"582","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","80-84","Female","Exsmoker",3,4.3,2018,0.002
+"583","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Male","Nonsmoker",1,1,2018,0.6568
+"584","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Male","Smoker",2,8.43,2018,0.312
+"585","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Male","Exsmoker",3,4.3,2018,0.0312
+"586","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Female","Nonsmoker",1,1,2018,0.978
+"587","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Female","Smoker",2,8.43,2018,0.02
+"588","tobacco","Tracheal, bronchus, and lung cancer","Saudi Arabia","85plus","Female","Exsmoker",3,4.3,2018,0.002

@@ -1,0 +1,32 @@
+Intervention,cause,target,RR,source
+Hypertension treatment,Ischemic heart disease,IR,0.83,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01225-8/fulltext
+Hypertension treatment,Hypertensive heart disease,IR,0.72,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01225-8/fulltext
+Hypertension treatment,Ischemic stroke,IR,0.73,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01225-8/fulltext
+Hypertension treatment,Intracerebral hemorrhage,IR,0.73,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01225-8/fulltext
+Hypertension treatment,Chronic kidney disease due to hypertension,IR,0.95,https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01225-8/fulltext
+Hypertension control,Ischemic heart disease,IR,0.69,Assume 20 mmHg reduction on average for full control
+Hypertension control,Hypertensive heart disease,IR,0.52,Assume 20 mmHg reduction on average for full control
+Hypertension control,Ischemic stroke,IR,0.53,Assume 20 mmHg reduction on average for full control
+Hypertension control,Intracerebral hemorrhage,IR,0.53,Assume 20 mmHg reduction on average for full control
+Hypertension control,Chronic kidney disease due to hypertension,IR,0.90,Assume 20 mmHg reduction on average for full control
+Hypertension control,Ischemic heart disease,CF,0.76,
+Hypertension control,Ischemic stroke,CF,0.64,
+Hypertension control,Intracerebral hemorrhage,CF,0.24,
+Hypertension control,Hypertensive heart disease,CF,0.80,
+Diabetes control,Ischemic heart disease,IR,0.83,
+Diabetes control,Diabetes mellitus type 2,CF,0.72,
+Diabetes control,Chronic kidney disease due to diabetes type 2,CF,0.84,
+Hypertension treatment,Ischemic heart disease,CF,0.88,Assume half the effect of full control
+Hypertension treatment,Ischemic stroke,CF,0.82,Assume half the effect of full control
+Hypertension treatment,Intracerebral hemorrhage,CF,0.62,Assume half the effect of full control
+Hypertension treatment,Hypertensive heart disease,CF,0.90,Assume half the effect of full control
+Diabetes treatment,Ischemic heart disease,IR,0.92,Assume half the effect of full control
+Diabetes treatment,Diabetes mellitus type 2,CF,0.86,Assume half the effect of full control
+Diabetes treatment,Chronic kidney disease due to diabetes type 2,CF,0.92,Assume half the effect of full control
+Second-hand smoke reduction,"Tracheal, bronchus, and lung cancer",IR,0.98,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Breast cancer,IR,0.978,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Ischemic heart disease,IR,0.966,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Ischemic stroke,IR,0.971,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Intracerebral hemorrhage,IR,0.967,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Chronic obstructive pulmonary disease,IR,0.961,based on 2016 GBD PAFs for high-middle income countries
+Second-hand smoke reduction,Diabetes mellitus,IR,0.927,based on 2016 GBD PAFs for high-middle income countries
