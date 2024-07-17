@@ -10,11 +10,14 @@ library(tidyverse)
 library(zoo)
 library(RColorBrewer)
 library(shinycssloaders)
+library(viridis)
+
 
 names<-read.csv("int_names.csv", stringsAsFactors = F)%>%
   bind_rows(., data.frame(Code=1, Intervention="All smoking interventions"),
             data.frame(Code=5, Intervention = "All HTN interventions"),
             data.frame(Code=7, Intervention = "All DM interventions"))
+
 ints<-read.csv("int_names.csv", stringsAsFactors = F)
 tob<-read.csv("tob.csv", stringsAsFactors = F)
 tob_RR<-read.csv("tobacco_RRs.csv", stringsAsFactors = F)%>%
@@ -37,12 +40,34 @@ b_rates<-data.table(read.csv("base_rates.csv", stringsAsFactors = F))
 pop0<-data.table(read.csv("pop.csv", stringsAsFactors = F))
 ints2<-read.csv("interventions.csv", stringsAsFactors = F)
 
+results<-read.csv("results.csv", stringsAsFactors = F)
+costs<-read.csv("cost_template.csv", stringsAsFactors = F)%>%select(Code, Total)
+
+DA_tot<-left_join(results%>%filter(Code==1), names)%>%
+  select(-newcases)%>%
+  left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+  mutate(Deaths.Averted = base.dead - dead)%>%
+  mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
+  pull(Deaths.Averted)
+
+DA_tot2<-left_join(results%>%filter(Code>1 & Code<=2), names)%>%
+  select(-newcases)%>%
+  left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+  mutate(Deaths.Averted = base.dead - dead)%>%
+  pull(Deaths.Averted)
+
+
+ratio<-sum(DA_tot)/sum(DA_tot2)
+
+
 ###############
 #FXNS
 #################
 
+'%!in%' <- function(x,y)!('%in%'(x,y)) # Function "Not In"
+
 #run model
-tob.model<-function(b_rates_tob, year1, n, code){
+tob.model<-function(b_rates_tob, tob_eff_in, year1, n, code){
   
   
   if(code=="baseline"){
@@ -55,7 +80,7 @@ tob.model<-function(b_rates_tob, year1, n, code){
     
     age_df<-data.frame(agetemp=10:65)
     
-    int.df<-tob_eff%>%filter(Code==code)%>%
+    int.df<-tob_eff_in%>%filter(Code==code)%>%
       merge(., age_df)%>%
       filter(agetemp>=age_start & agetemp<=age_stop)%>%
       rename(age=agetemp)%>%
@@ -215,7 +240,7 @@ ui <- fluidPage(
             checkboxGroupInput("tob_sel", "Tobacco:", ints$Intervention[ints$Code<2],
                                selected = ints$Intervention[ints$Code<2]),
             h5("Tobacco customizations:"),
-            sliderInput("tax", "Additional specific excise tax (SAR):", min=0,max=100, value=1, step=1),
+            sliderInput("tax", "Additional specific excise tax (SAR):", min=0,max=100, value=38.5, step=0.5),
             textOutput("pack_price"),
             textOutput("percent_tax"),
             br(),
@@ -237,22 +262,37 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
           h4("To run the cost effectiveness analysis, choose your interventions and customize parameters in the
-             menu on the left. Then upload your costing data and press the 'Run' button to get your custom results. 
-             You can download the template for the cositng data required below. If no data are uploaded, default assumptions
-             are used."), br(),
+             menu on the left. Then upload your costing data and press the 'Run' button to get your custom results.
+             Results may take a minute to load.
+             You can download the template for the costing data required below. 
+             If no data are uploaded, default assumptions are used."), br(),
           h4("Code for the model can be found: https://github.com/Disease-Control-Priorities/NCD-MP"),br(),
           
-          actionButton("cost_template", "Download cost template"),
-          actionButton("upload_costs", "Upload custom cost data"),
+          downloadButton("cost_template", "Download cost template"),br(), 
+          fileInput("upload", "Upload custom cost data", accept=".csv", multiple = T),
           actionButton("run", "Run analysis", class="btn-warning"), br(),br(),
           
-          withSpinner(plotOutput("distPlot"), 1)
+          withSpinner(plotOutput("tob_plot"), 1),
+          withSpinner(plotOutput("htn_plot"), 1),
+          tableOutput("results_tab")
+          
         )
     )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+  
+  output$cost_template <- downloadHandler(
+    filename = function() {
+      "cost_template.csv"
+    },
+    content = function(file) {
+      write.csv(read.csv("cost_template.csv", stringsAsFactors = F), file)
+    }
+  )
+  
+  
   
     output$pack_price<-renderText({
       
@@ -279,238 +319,465 @@ server <- function(input, output) {
       sliderInput("dm_screen2", "Screening coverage extended to non-clinic settings (%):", min=input$dm_screen1, max=100, value=95)
       
     })
-
-    output$distPlot <- renderPlot({
-      
-      #print(input$tob_sel)
-      #codes<-ints%>%filter(Intervention %in% input$tob_sel)%>%pull(Code)
-      
-      codes<-c(1.1,1.2,1.3)
-      
-      all_eff<-tob_eff%>%
-        filter(age_stop==25)%>%
-        filter(Code %in% codes)%>%
-        group_by(age_start, age_stop)%>%
-        summarise(cessation = 1-prod((1-cessation)),
-                  initiation = 1-prod((1-initiation)))%>%
-        bind_rows(., tob_eff%>%group_by(age_start)%>%
-                    summarise(cessation = 1-prod((1-cessation)),
-                              initiation = 1-prod((1-initiation)))%>%
-                    mutate(age_stop = 65,
-                           age_start=26)
-        )%>%
-        mutate(Code=1, Intervention="All tobacco interventions")
-      
-      tob_eff<-bind_rows(tob_eff, all_eff)
-      
-      #get alphas
-      impact.tob<-tob.model(tob, 2020, 10, "baseline")%>%
-        select(-init, -cess, -check)%>%
-        rename(Nonsmoker = Never, Smoker = Current, Exsmoker=Ex, sex=Sex)%>%
-        gather(Category, pi, -sex, -age, -year)%>%
-        left_join(., tob_RR)%>%
-        group_by(sex, age, year, Cause)%>%
-        summarise(alpha =sum(pi*RR))%>%
-        left_join(., tob_RR)
-      
-      #run tobacco model for each intervention
-      tob_df<-tob.model(tob, 2020, 10, "baseline")%>%mutate(Code=0)
-
-      for(i in codes){
-        tob_df<-bind_rows(tob_df, tob.model(tob, 2020, 10, i)%>%mutate(Code=i))
-      }
-      
-      pi_star<-tob_df%>%
-        select(age, year, sex=Sex, Nonsmoker = Never, Smoker = Current, Exsmoker = Ex, Code)%>%
-        gather(Category, pi2, -age, -year, -sex, -Code)
-      
-      impact.tob<-left_join(impact.tob, pi_star)%>%
-        mutate(impact = (RR/alpha)*pi2)%>%
-        group_by(Code, Cause, age, sex, year)%>%
-        summarise(impact = sum(impact))%>%
-        filter(Code>0)%>%
-        mutate(target="IR")
-      
-      #Combine
-      impact.tob<-bind_rows(impact.tob, impact.tob%>%mutate(target="CF"))
-      
-      #extend for 0-24 and 66-95
-      add<-impact.tob%>%filter(age==65)
-      any(is.na(add))
-      
-      #this is janky
-      for(i in 0:9){
-        impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i, impact=1))
-      }
-      
-      for(i in 66:95){
-        
-        impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i))
-      }
-      
-      ######################
-      #shs
-      ######################
-      
-      impact.ssh<-ints2%>%filter(Intervention=="Second-hand smoke reduction")%>%
-        mutate(Code=1.6)%>%
-        select(-source)%>%
-        merge(., data.frame(year=2019:2030))%>%
-        mutate(impact = (1-RR)*(year-2023)/7,
-               impact = 1-ifelse(year<2023, 0, impact))%>%
-        select(Code, Cause=cause, target, year, impact)%>%
-        merge(., data.frame(age=0:95))%>%
-        merge(., data.frame(sex = c("Male", "Female")))%>%
-        mutate(impact = ifelse(age>20, 1, impact))
-      
-
-      ######################
-      ##DM/HTN
-      ######################
-      
-      test<-ints2%>%filter(Intervention!="Second-hand smoke reduction")%>%
-        select(-source)%>%spread(Intervention, RR)
-      
-      screen1<-cascade%>%filter(year==2023)%>%
-        select(-year)%>%
-        merge(., data.frame(year=2023:2030))%>%
-        mutate(Aware = ifelse(year==2030, 0.75,
-                              ifelse(year<=2023, Aware, NA)))%>%
-        group_by(sex)%>%
-        mutate(Aware = na.approx(Aware),
-               Treated = Aware * connection.to.care,
-               Control = Treated * quality.of.care)%>%
-        bind_rows(., cascade%>%filter(year<2023))
-      
-      screen2<-cascade%>%filter(year==2023)%>%
-        select(-year)%>%
-        merge(., data.frame(year=2023:2030))%>%
-        mutate(Aware = ifelse(year==2030, 0.95,
-                              ifelse(year<=2023, Aware, NA)))%>%
-        group_by(sex)%>%
-        mutate(Aware = na.approx(Aware),
-               Treated = Aware * connection.to.care,
-               Control = Treated * quality.of.care)%>%
-        bind_rows(., cascade%>%filter(year<2023))
-      
-      treat1<-cascade%>%filter(year==2023)%>%
-        select(-year)%>%
-        merge(., data.frame(year=2023:2030))%>%
-        mutate(connection.to.care = ifelse(year==2030, 0.95,
-                                           ifelse(year<=2023, connection.to.care, NA)),
-               quality.of.care = ifelse(year==2030, 0.75,
-                                        ifelse(year<=2023, quality.of.care, NA)))%>%
-        group_by(sex)%>%
-        mutate(connection.to.care = na.approx(connection.to.care),
-               quality.of.care = na.approx(quality.of.care),
-               Treated = Aware * connection.to.care,
-               Control = Treated * quality.of.care)%>%
-        bind_rows(., cascade%>%filter(year<2023))
-      
-      treat2<-screen2%>%
-        mutate(connection.to.care = ifelse(year==2030, 0.95,
-                                           ifelse(year<=2023, connection.to.care, NA)),
-               quality.of.care = ifelse(year==2030, 0.75,
-                                        ifelse(year<=2023, quality.of.care, NA)))%>%
-        group_by(sex)%>%
-        mutate(connection.to.care = na.approx(connection.to.care),
-               quality.of.care = na.approx(quality.of.care),
-               Treated = Aware * connection.to.care,
-               Control = Treated * quality.of.care)
-      
-      impact.htn<-bind_rows(screen1%>%mutate(Code=5.1), screen2%>%mutate(Code=5.2),
-                            treat1%>%mutate(Code=5.3), treat2%>%mutate(Code = 5))%>%
-        left_join(., cascade%>%filter(year==2023)%>%
-                    rename(base.treat = Treated, base.control=Control)%>%
-                    select(sex, base.treat, base.control))%>%
-        mutate(treat.inc = Treated-base.treat,
-               treat.inc = ifelse(treat.inc<0.00001, 0,treat.inc),
-               control.inc = Control-base.control,
-               control.inc = ifelse(control.inc<0.00001, 0, control.inc))%>%
-        select(year, sex, Code, treat.inc, control.inc, HTN)%>%
-        merge(., test)%>%
-        mutate(treat.impact = (treat.inc-control.inc)*(1-`Hypertension treatment`),
-               control.impact = control.inc*(1-`Hypertension control`),
-               impact = (1-treat.impact)*(1-control.impact),
-               impact = ifelse(target=="CF", 1-(1-impact)*HTN, impact))%>%
-        select(year, sex, Code, target, cause, impact)%>%
-        na.omit()%>%
-        filter(year>=2019)%>%
-        merge(., data.frame(age=0:95))
-      
-      impact.dm<-bind_rows(screen1%>%mutate(Code=7.1), screen2%>%mutate(Code=7.2),
-                           treat1%>%mutate(Code=7.3), treat2%>%mutate(Code = 7))%>%
-        left_join(., cascade%>%filter(year==2023)%>%
-                    rename(base.treat = Treated, base.control=Control)%>%
-                    select(sex, base.treat, base.control))%>%
-        mutate(treat.inc = Treated-base.treat,
-               treat.inc = ifelse(treat.inc<0.00001, 0,treat.inc),
-               control.inc = Control-base.control,
-               control.inc = ifelse(control.inc<0.00001, 0, control.inc))%>%
-        select(year, sex, Code, treat.inc, control.inc, DM)%>%
-        merge(., test)%>%
-        mutate(treat.impact = (treat.inc-control.inc)*(1-`Diabetes treatment`),
-               control.impact = control.inc*(1-`Diabetes control`),
-               impact = (1-treat.impact)*(1-control.impact),
-               impact = ifelse(target=="CF", 1-(1-impact)*DM, impact))%>%
-        select(year, sex, Code, target, cause, impact)%>%
-        na.omit()%>%
-        filter(year>=2019)%>%
-        merge(., data.frame(age=0:95))
-      
-      ##all intereventions
-      interv.df<-bind_rows(impact.tob%>%rename(cause = Cause), 
-                           impact.ssh%>%rename(cause = Cause)%>%
-                             mutate(impact = 1-(1-impact)),
-                           impact.htn, impact.dm)%>%
-        filter(target=="IR")%>%
-        rename(IR_eff=impact)%>%
-        select(-target)%>%
-        full_join(.,bind_rows(impact.tob%>%rename(cause = Cause), 
-                              impact.ssh%>%rename(cause = Cause),
-                              impact.htn, impact.dm)%>%
-                    filter(target=="CF")%>%
-                    rename(CF_eff=impact)%>%
-                    select(-target))%>%
-        mutate(IR_eff = ifelse(is.na(IR_eff), 1, IR_eff),
-               CF_eff = ifelse(is.na(CF_eff), 1, CF_eff))
-      
-      interv.all<-interv.df%>%filter(Code%in%c(1,5,7))%>%
-        group_by(age, sex, cause, year)%>%
-        summarise(IR_eff = prod(IR_eff),
-                  CF_eff = prod(CF_eff))%>%
-        mutate(Code=8)
-      
-      interv.df<-bind_rows(interv.df, interv.all)
-      
-      #unique(interv.df$Code)
-      
-      ######################
-      ##run model
-      ######################
-      
-      out.df<-state.transition(b_rates, pop0, "baseline", interv.df)%>%mutate(Code=0)
-      
-      sels<-c(5,5.1,5.2,5.3,7,7.1,7.2,7.3)
-      
-      for(i in sels){
-        
-        out.df<-bind_rows(out.df, state.transition(b_rates, pop0, i, interv.df)%>%mutate(Code=i))
-        
-      }
-      
     
-      ##############
+    
+    v<-reactiveValues(tob_data = results%>%filter(Code<2 & Code>0),
+                      htn_data = results%>%filter(Code>2),
+                      baseline = results%>%filter(Code==0),
+                      htn_codes = c(5.1, 5.2, 5.3, 7.1, 7.2, 7.3),
+                      costs = costs,
+                      ratio = ratio)
+    
+    observeEvent( input$run, {
       
-      df_out<-out.df%>%group_by(year, Code)%>%
-        summarise(dead = sum(dead),
-                  newcases = sum(newcases))
+      codes<-ints%>%filter(Intervention %in% input$tob_sel)%>%pull(Code)
+      v$tob_data<-results%>%filter(Code %in% codes)
       
-      baseline<-df_out%>%filter(Code==0)
+      v$htn_codes<-c(ints%>%filter(Intervention %in% input$htn_sel)%>%pull(Code),
+               ints%>%filter(Intervention %in% input$dm_sel)%>%pull(Code)) 
       
-      DA<-left_join(df_out%>%filter(Code>2), names)%>%
+      if(!is.null(input$upload)){
+      v$costs<-read.csv(input$upload$datapath, header=T, stringsAsFactors = F)%>%select(Code, Total)
+      }
+      
+      else{}
+      
+      if(input$tax!=38.5 & 1.7 %in% codes){
+        
+        imp<-0.48*input$tax/28
+        imp<-min(0.95, imp)
+        #codes<-c(1.1,1.2,1.3,1.4,1.7)
+        
+        tob_eff_new<-tob_eff%>%
+          mutate(cessation = ifelse(Code==1.7, imp, cessation),
+                 initiation = ifelse(Code==1.7, imp, initiation))%>%
+          filter(Code!=1)
+        
+        all_eff<-tob_eff_new%>%
+          filter(Code %in% codes)%>%
+          filter(age_stop==25)%>%
+          filter(Code %in% codes)%>%
+          group_by(age_start, age_stop)%>%
+          summarise(cessation = 1-prod((1-cessation)),
+                    initiation = 1-prod((1-initiation)))%>%
+          bind_rows(., tob_eff%>%group_by(age_start)%>%
+                      summarise(cessation = 1-prod((1-cessation)),
+                                initiation = 1-prod((1-initiation)))%>%
+                      mutate(age_stop = 65,
+                             age_start=26)
+          )%>%
+          mutate(Code=1, Intervention="All tobacco interventions")
+        
+        tob_eff_new<-bind_rows(tob_eff_new, all_eff)
+        
+        
+        impact.tob<-tob.model(tob, tob_eff_new, 2020, 10, "baseline")%>%
+          select(-init, -cess, -check)%>%
+          rename(Nonsmoker = Never, Smoker = Current, Exsmoker=Ex, sex=Sex)%>%
+          gather(Category, pi, -sex, -age, -year)%>%
+          left_join(., tob_RR)%>%
+          group_by(sex, age, year, Cause)%>%
+          summarise(alpha =sum(pi*RR))%>%
+          left_join(., tob_RR)
+        
+        tob_df<-tob.model(tob, tob_eff_new, 2020, 10, "baseline")%>%mutate(Code=0)%>%
+          bind_rows(., tob.model(tob, tob_eff_new, 2020, 10, 1.7)%>%mutate(Code=1.7))%>%
+          bind_rows(., tob.model(tob, tob_eff_new, 2020, 10, 1.0)%>%mutate(Code=1.0))
+        
+        pi_star<-tob_df%>%
+          select(age, year, sex=Sex, Nonsmoker = Never, Smoker = Current, Exsmoker = Ex, Code)%>%
+          gather(Category, pi2, -age, -year, -sex, -Code)
+        
+        impact.tob<-left_join(impact.tob, pi_star)%>%
+          mutate(impact = (RR/alpha)*pi2)%>%
+          group_by(Code, Cause, age, sex, year)%>%
+          summarise(impact = sum(impact))%>%
+          filter(Code>0)%>%
+          mutate(target="IR")
+        
+        impact.tob<-bind_rows(impact.tob, impact.tob%>%mutate(target="CF"))
+        
+        #extend for 0-24 and 66-95
+        add<-impact.tob%>%filter(age==65)
+
+        #this is janky
+        for(i in 0:9){
+          impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i, impact=1))
+        }
+        
+        for(i in 66:95){
+          
+          impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i))
+        }
+        
+        interv.df<-impact.tob%>%rename(cause = Cause)%>%
+          filter(target=="IR")%>%
+          rename(IR_eff=impact)%>%
+          select(-target)%>%
+          full_join(., impact.tob%>%rename(cause = Cause)%>%
+                      filter(target=="CF")%>%
+                      rename(CF_eff=impact)%>%
+                      select(-target))%>%
+          mutate(IR_eff = ifelse(is.na(IR_eff), 1, IR_eff),
+                 CF_eff = ifelse(is.na(CF_eff), 1, CF_eff))
+        
+      #any(is.na(interv.df))   
+        out.df<-data.frame()
+        
+        sels<-unique(interv.df$Code)
+        
+        for(i in sels){
+          
+          out.df<-bind_rows(out.df, state.transition(b_rates, pop0, i, interv.df)%>%mutate(Code=i))
+          
+        }
+        
+        update<-out.df%>%group_by(year, Code)%>%
+          summarise(dead = sum(dead),
+                    newcases = sum(newcases))
+        
+        v$tob_data<-v$tob_data%>%filter(Code %!in% sels)%>%
+          bind_rows(., update)
+        
+        #DA_tot<-left_join(v$tob_data%>%filter(Code==1), names)%>%
+        #  select(-newcases)%>%
+        #  left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+        #  mutate(Deaths.Averted = base.dead - dead)%>%
+        #  mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
+        #  pull(Deaths.Averted)
+        
+        #DA_tot2<-left_join(v$tob_data%>%filter(Code>1 & Code<=2), names)%>%
+          #select(-newcases)%>%
+          #left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+          #mutate(Deaths.Averted = base.dead - dead)%>%
+          #pull(Deaths.Averted)
+        
+        
+        #v$ratio<-sum(DA_tot)/sum(DA_tot2)
+        
+      }
+      
+      else{
+        
+        all_eff<-tob_eff%>%
+          filter(age_stop==25)%>%
+          filter(Code %in% codes)%>%
+          group_by(age_start, age_stop)%>%
+          summarise(cessation = 1-prod((1-cessation)),
+                    initiation = 1-prod((1-initiation)))%>%
+          bind_rows(., tob_eff%>%group_by(age_start)%>%
+                      summarise(cessation = 1-prod((1-cessation)),
+                                initiation = 1-prod((1-initiation)))%>%
+                      mutate(age_stop = 65,
+                             age_start=26)
+          )%>%
+          mutate(Code=1, Intervention="All tobacco interventions")
+        
+        #update tobacco numbers to reflect non-additive sum
+        impact.tob<-tob.model(tob, all_eff, 2020, 10, "baseline")%>%
+          select(-init, -cess, -check)%>%
+          rename(Nonsmoker = Never, Smoker = Current, Exsmoker=Ex, sex=Sex)%>%
+          gather(Category, pi, -sex, -age, -year)%>%
+          left_join(., tob_RR)%>%
+          group_by(sex, age, year, Cause)%>%
+          summarise(alpha =sum(pi*RR))%>%
+          left_join(., tob_RR)
+        
+        tob_df<-tob.model(tob, all_eff, 2020, 10, 1.0)%>%mutate(Code=1.0)
+        
+        pi_star<-tob_df%>%
+          select(age, year, sex=Sex, Nonsmoker = Never, Smoker = Current, Exsmoker = Ex, Code)%>%
+          gather(Category, pi2, -age, -year, -sex, -Code)
+        
+        impact.tob<-left_join(impact.tob, pi_star)%>%
+          mutate(impact = (RR/alpha)*pi2)%>%
+          group_by(Code, Cause, age, sex, year)%>%
+          summarise(impact = sum(impact))%>%
+          filter(Code>0)%>%
+          mutate(target="IR")
+        
+        impact.tob<-bind_rows(impact.tob, impact.tob%>%mutate(target="CF"))
+        
+        #extend for 0-24 and 66-95
+        add<-impact.tob%>%filter(age==65)
+        
+        #this is janky
+        for(i in 0:9){
+          impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i, impact=1))
+        }
+        
+        for(i in 66:95){
+          
+          impact.tob<-bind_rows(impact.tob, add%>%mutate(age=i))
+        }
+        
+        interv.df<-impact.tob%>%rename(cause = Cause)%>%
+          filter(target=="IR")%>%
+          rename(IR_eff=impact)%>%
+          select(-target)%>%
+          full_join(., impact.tob%>%rename(cause = Cause)%>%
+                      filter(target=="CF")%>%
+                      rename(CF_eff=impact)%>%
+                      select(-target))%>%
+          mutate(IR_eff = ifelse(is.na(IR_eff), 1, IR_eff),
+                 CF_eff = ifelse(is.na(CF_eff), 1, CF_eff))
+        
+        #any(is.na(interv.df))   
+        out.df<-data.frame()
+        
+        sels<-unique(interv.df$Code)
+        
+        for(i in sels){
+          
+          out.df<-bind_rows(out.df, state.transition(b_rates, pop0, i, interv.df)%>%mutate(Code=i))
+          
+        }
+        
+        update<-out.df%>%group_by(year, Code)%>%
+          summarise(dead = sum(dead),
+                    newcases = sum(newcases))
+        
+        v$tob_data<-v$tob_data%>%filter(Code %!in% sels)%>%
+          bind_rows(., update)
+        
+        #DA_tot<-left_join(v$tob_data%>%filter(Code==1), names)%>%
+        #  select(-newcases)%>%
+        #  left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+        #  mutate(Deaths.Averted = base.dead - dead)%>%
+        #  mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
+        #  pull(Deaths.Averted)
+        
+        #DA_tot2<-left_join(v$tob_data%>%filter(Code>1 & Code<=2), names)%>%
+        #  select(-newcases)%>%
+        #  left_join(., results%>%filter(Code==0)%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+        #  mutate(Deaths.Averted = base.dead - dead)%>%
+        #  pull(Deaths.Averted)
+        
+        
+        #v$ratio<-sum(DA_tot)/sum(DA_tot2)
+        
+      }
+      
+      
+      #htn/dm
+      
+      if(input$screen1 != 75 | input$screen2 != 95 | input$treat1 !=95 | input$treat2 !=75 |input$dm_screen1 != 75 | input$dm_screen2 != 95 | input$dm_treat1 !=95 | input$dm_treat2 !=75){
+        
+        test<-ints2%>%filter(Intervention!="Second-hand smoke reduction")%>%
+          select(-source)%>%spread(Intervention, RR)
+        
+        screen1<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(Aware = ifelse(year==2030, input$screen1/100,
+                                ifelse(year<=2023, Aware, NA)))%>%
+          group_by(sex)%>%
+          mutate(Aware = na.approx(Aware),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        screen2<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(Aware = ifelse(year==2030, input$screen2/100,
+                                ifelse(year<=2023, Aware, NA)))%>%
+          group_by(sex)%>%
+          mutate(Aware = na.approx(Aware),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        treat1<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(connection.to.care = ifelse(year==2030, input$treat1/100,
+                                             ifelse(year<=2023, connection.to.care, NA)),
+                 quality.of.care = ifelse(year==2030, input$treat2/100,
+                                          ifelse(year<=2023, quality.of.care, NA)))%>%
+          group_by(sex)%>%
+          mutate(connection.to.care = na.approx(connection.to.care),
+                 quality.of.care = na.approx(quality.of.care),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        treat2<-screen2%>%
+          mutate(connection.to.care = ifelse(year==2030, input$treat1/100,
+                                             ifelse(year<=2023, connection.to.care, NA)),
+                 quality.of.care = ifelse(year==2030, input$treat2/100,
+                                          ifelse(year<=2023, quality.of.care, NA)))%>%
+          group_by(sex)%>%
+          mutate(connection.to.care = na.approx(connection.to.care),
+                 quality.of.care = na.approx(quality.of.care),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)
+        
+        impact.htn<-bind_rows(screen1%>%mutate(Code=5.1), screen2%>%mutate(Code=5.2),
+                              treat1%>%mutate(Code=5.3), treat2%>%mutate(Code = 5))%>%
+          left_join(., cascade%>%filter(year==2023)%>%
+                      rename(base.treat = Treated, base.control=Control)%>%
+                      select(sex, base.treat, base.control))%>%
+          mutate(treat.inc = Treated-base.treat,
+                 treat.inc = ifelse(treat.inc<0.00001, 0,treat.inc),
+                 control.inc = Control-base.control,
+                 control.inc = ifelse(control.inc<0.00001, 0, control.inc))%>%
+          select(year, sex, Code, treat.inc, control.inc, HTN)%>%
+          merge(., test)%>%
+          mutate(treat.impact = (treat.inc-control.inc)*(1-`Hypertension treatment`),
+                 control.impact = control.inc*(1-`Hypertension control`),
+                 impact = (1-treat.impact)*(1-control.impact),
+                 impact = ifelse(target=="CF", 1-(1-impact)*HTN, impact))%>%
+          select(year, sex, Code, target, cause, impact)%>%
+          na.omit()%>%
+          filter(year>=2019)%>%
+          merge(., data.frame(age=0:95))
+        
+        dm_screen1<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(Aware = ifelse(year==2030, input$dm_screen1/100,
+                                ifelse(year<=2023, Aware, NA)))%>%
+          group_by(sex)%>%
+          mutate(Aware = na.approx(Aware),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        dm_screen2<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(Aware = ifelse(year==2030, input$dm_screen2/100,
+                                ifelse(year<=2023, Aware, NA)))%>%
+          group_by(sex)%>%
+          mutate(Aware = na.approx(Aware),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        dm_treat1<-cascade%>%filter(year==2023)%>%
+          select(-year)%>%
+          merge(., data.frame(year=2023:2030))%>%
+          mutate(connection.to.care = ifelse(year==2030, input$dm_treat1/100,
+                                             ifelse(year<=2023, connection.to.care, NA)),
+                 quality.of.care = ifelse(year==2030, input$dm_treat2/100,
+                                          ifelse(year<=2023, quality.of.care, NA)))%>%
+          group_by(sex)%>%
+          mutate(connection.to.care = na.approx(connection.to.care),
+                 quality.of.care = na.approx(quality.of.care),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)%>%
+          bind_rows(., cascade%>%filter(year<2023))
+        
+        dm_treat2<-dm_screen2%>%
+          mutate(connection.to.care = ifelse(year==2030, input$dm_treat1/100,
+                                             ifelse(year<=2023, connection.to.care, NA)),
+                 quality.of.care = ifelse(year==2030, input$dm_treat2/100,
+                                          ifelse(year<=2023, quality.of.care, NA)))%>%
+          group_by(sex)%>%
+          mutate(connection.to.care = na.approx(connection.to.care),
+                 quality.of.care = na.approx(quality.of.care),
+                 Treated = Aware * connection.to.care,
+                 Control = Treated * quality.of.care)
+        
+        impact.dm<-bind_rows(dm_screen1%>%mutate(Code=7.1), dm_screen2%>%mutate(Code=7.2),
+                             dm_treat1%>%mutate(Code=7.3), dm_treat2%>%mutate(Code = 7))%>%
+          left_join(., cascade%>%filter(year==2023)%>%
+                      rename(base.treat = Treated, base.control=Control)%>%
+                      select(sex, base.treat, base.control))%>%
+          mutate(treat.inc = Treated-base.treat,
+                 treat.inc = ifelse(treat.inc<0.00001, 0,treat.inc),
+                 control.inc = Control-base.control,
+                 control.inc = ifelse(control.inc<0.00001, 0, control.inc))%>%
+          select(year, sex, Code, treat.inc, control.inc, DM)%>%
+          merge(., test)%>%
+          mutate(treat.impact = (treat.inc-control.inc)*(1-`Diabetes treatment`),
+                 control.impact = control.inc*(1-`Diabetes control`),
+                 impact = (1-treat.impact)*(1-control.impact),
+                 impact = ifelse(target=="CF", 1-(1-impact)*DM, impact))%>%
+          select(year, sex, Code, target, cause, impact)%>%
+          na.omit()%>%
+          filter(year>=2019)%>%
+          merge(., data.frame(age=0:95))
+        
+        ##all intereventions
+        interv.df<-bind_rows(#impact.tob%>%rename(cause = Cause), 
+          #impact.ssh%>%rename(cause = Cause)%>%
+          #   mutate(impact = 1-(1-impact)),
+          impact.htn, impact.dm)%>%
+          filter(target=="IR")%>%
+          rename(IR_eff=impact)%>%
+          select(-target)%>%
+          full_join(.,bind_rows(#impact.tob%>%rename(cause = Cause), 
+            #impact.ssh%>%rename(cause = Cause),
+            impact.htn, impact.dm)%>%
+              filter(target=="CF")%>%
+              rename(CF_eff=impact)%>%
+              select(-target))%>%
+          mutate(IR_eff = ifelse(is.na(IR_eff), 1, IR_eff),
+                 CF_eff = ifelse(is.na(CF_eff), 1, CF_eff))
+        
+        
+        ##set up data frame
+        
+        out.df<-data.frame()
+        
+        sels<-c(5,5.1,5.2,5.3,7,7.1,7.2,7.3)
+        
+        for(i in sels){
+          
+          out.df<-bind_rows(out.df, state.transition(b_rates, pop0, i, interv.df)%>%mutate(Code=i))
+          
+        }
+        
+        v$htn_data<-out.df%>%group_by(year, Code)%>%
+          summarise(dead = sum(dead),
+                    newcases = sum(newcases))
+        
+      }
+      
+      else{
+        v$htn_data<-results%>%filter(Code>2)
+      }
+      
+      
+    })
+    
+    output$tob_plot<-renderPlot({
+
+      baseline<-v$baseline%>%filter(Code==0)
+      
+      DA<-left_join(v$tob_data%>%filter(Code>=1 & Code<=2), names)%>%
         select(-newcases)%>%
         left_join(., baseline%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+        mutate(Deaths.Averted = base.dead - dead)%>%
+        mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
+        group_by(Code)%>%
+        arrange(year)%>%
+        mutate(Cumulative.DA = signif(cumsum(v$ratio*Deaths.Averted),3))%>%
+        arrange(Code)
+      
+      #ratio<-sum(DA%>%filter(Code==1)%>%pull(Deaths.Averted))/sum(DA%>%filter(Code!=1)%>%pull(Deaths.Averted))
+      
+      ggplot(DA%>%filter(Code!=1), 
+             aes(x=year, y=Cumulative.DA, fill=str_wrap(Intervention,40)))+
+        geom_area()+
+        theme_bw()+
+        xlab("Year")+
+        ylab("Cumulative deaths averted")+
+        labs(fill="Intervention")+
+        ggtitle("Deaths averted by tobacco policies")
+      
+    })
+    
+    output$htn_plot<-renderPlot({
+      
+      cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+      
+       
+      DA<-left_join(v$htn_data, names)%>%
+        select(-newcases)%>%
+        left_join(., v$baseline%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
         mutate(Deaths.Averted = base.dead - dead)%>%
         mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
         group_by(Code)%>%
@@ -518,40 +785,25 @@ server <- function(input, output) {
         mutate(Cumulative.DA = signif(cumsum(Deaths.Averted),3))%>%
         arrange(Code)
       
-      CA<-left_join(df_out%>%filter(Code>2), names)%>%
-        select(-dead)%>%
-        left_join(., baseline%>%select(-dead, -Code)%>%rename(base.case=newcases))%>%
-        mutate(Cases.Averted = base.case - newcases)%>%
-        mutate(Cases.Averted = ifelse(Cases.Averted<0, 0 , signif(Cases.Averted,3)))%>%
-        group_by(Code)%>%
-        arrange(year)%>%
-        mutate(Cumulative.CA = signif(cumsum(Cases.Averted),3))%>%
-        arrange(Code)
-      
-      htn.out2<-left_join(DA, CA)%>%select(-dead, -base.dead, -base.case, -newcases)%>%
-        filter(year>=2023)
-      
-      cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-      
-      htn.plot<-htn.out2%>%select(-Intervention, -Cumulative.CA, -Cases.Averted, -Deaths.Averted)%>%
+      htn.plot<-DA%>%select(-Intervention, -Deaths.Averted, -dead, -base.dead)%>%
+        filter(Code %in% c(5,5.1,5.2,5.3,7,7.1,7.2,7.3))%>%
         spread(Code, Cumulative.DA)%>%
-        mutate(`5` = `5` - `5.2`,
-               `7` = `7` - `7.2`,
+        mutate(`5.3` = `5` - `5.2`,
+               `7.3` = `7` - `7.2`,
                `5.2` = `5.2` - `5.1`,
                `7.2` = `7.2` - `7.1`)%>%
-        select(-`5.3`, -`7.3`)%>%
         gather(Code, Cumulative.DA, -year)%>%
         mutate(Code = as.numeric(Code))%>%
+        filter(Code %in% v$htn_codes)%>%
         left_join(., names)%>%
-        mutate(Intervention = ifelse(Code==5, "Enhance hypertension intervention uptake and adherence", Intervention),
-               Intervention = ifelse(Code==7, "Enhance diabetes intervention uptake and adherence", Intervention),
+        mutate(Intervention = ifelse(Code==5.3, "Enhance hypertension intervention uptake and adherence", Intervention),
+               Intervention = ifelse(Code==7.3, "Enhance diabetes intervention uptake and adherence", Intervention),
                Intervention = ifelse(Code==5.2, "Make early hypertension detection available in non clinic settings", Intervention),
                Intervention = ifelse(Code==7.2, "Make early diabetes detection available in non clinic settings", Intervention)
         )%>%
-        mutate(Code = ifelse(Code==5, 5.4, Code),
-               Code = ifelse(Code==7, 7.4, Code))%>%
         mutate(group = ifelse(Code>=7, "Diabetes", "Hypertension"))
       
+      legend_ord <- levels(with(htn.plot, reorder(Intervention, Code)))
       
       ggplot(htn.plot, aes(x=year, y=Cumulative.DA, fill=str_wrap(Intervention,40)))+
         geom_area()+
@@ -560,9 +812,69 @@ server <- function(input, output) {
         ylab("Cumulative deaths averted")+
         facet_wrap(~group)+
         scale_fill_manual(values=cbPalette[c(5,3,2,6,7,4)])+
-        labs(fill="Intervention") 
+        labs(fill="Intervention")+
+        ggtitle("Deaths averted by hypertension and diabetes treatment")
       
     })
+    
+    output$results_tab<-renderTable({
+      
+      DA<-left_join(v$htn_data, names)%>%
+        select(-newcases)%>%
+        left_join(., v$baseline%>%select(-newcases, -Code)%>%rename(base.dead=dead))%>%
+        mutate(Deaths.Averted = base.dead - dead)%>%
+        mutate(Deaths.Averted = ifelse(Deaths.Averted<0, 0, signif(Deaths.Averted,3)))%>%
+        group_by(Code)%>%
+        arrange(year)%>%
+        mutate(Cumulative.DA = signif(cumsum(Deaths.Averted),3))%>%
+        arrange(Code)
+      
+      htn.plot<-DA%>%select(-Intervention, -Deaths.Averted, -dead, -base.dead)%>%
+        filter(Code %in% c(5,5.1,5.2,5.3,7,7.1,7.2,7.3))%>%
+        spread(Code, Cumulative.DA)%>%
+        mutate(`5.3` = `5` - `5.2`,
+               `7.3` = `7` - `7.2`,
+               `5.2` = `5.2` - `5.1`,
+               `7.2` = `7.2` - `7.1`)%>%
+        gather(Code, Cumulative.DA, -year)%>%
+        mutate(Code = as.numeric(Code))%>%
+        filter(Code %in% v$htn_codes)%>%
+        left_join(., names)%>%
+        mutate(Intervention = ifelse(Code==5.3, "Enhance hypertension intervention uptake and adherence", Intervention),
+               Intervention = ifelse(Code==7.3, "Enhance diabetes intervention uptake and adherence", Intervention),
+               Intervention = ifelse(Code==5.2, "Make early hypertension detection available in non clinic settings", Intervention),
+               Intervention = ifelse(Code==7.2, "Make early diabetes detection available in non clinic settings", Intervention)
+        )%>%
+        mutate(group = ifelse(Code>=7, "Diabetes", "Hypertension"))
+      
+      
+      htn2<-htn.plot%>%filter(year==2030)%>%select(-year, -group)%>%
+        rename(`Deaths averted` = Cumulative.DA)
+        
+      
+      
+      df<-left_join(v$tob_data, names)%>%
+        filter(Code!=1)%>%
+        left_join(., v$baseline%>%select(-newcases, -Code)%>%rename(base=dead))%>%
+        group_by(Code, Intervention)%>%
+        summarise(dead = sum(dead),
+                  base = sum(base))%>%
+        mutate(`Deaths averted` =round(v$ratio*(base - dead)))%>%
+      select(-dead, -base)%>%
+        bind_rows(., htn2)%>%
+        left_join(., v$costs)%>%
+        rename(`Total cost (SAR)` = Total)%>%
+        mutate(`Cost per death averted (SAR)` = `Total cost (SAR)` / `Deaths averted`)%>%
+        ungroup()%>%
+        select(-Code)
+        
+      
+      df
+      
+      
+    })
+
+   
 }
 
 # Run the application 

@@ -20,7 +20,7 @@ for(i in 2024:2030){
 }
 
 
-write.csv(tob, "NCD-MP/tob.csv", row.names = F)
+write.csv(tob, "app/tob.csv", row.names = F)
 
 tob_RR<-read.csv("data/tobacco_RRs.csv", stringsAsFactors = F)%>%
   rename(sex=Sex)
@@ -451,9 +451,9 @@ state.transition<-function(b_rates, pop0, code){
 test<-state.transition(b_rates, pop0, "baseline")
 any(is.na(test))
 
-write.csv(b_rates, "NCD-MP/base_rates.csv", row.names = F)
-write.csv(pop0, "NCD-MP/pop.csv", row.names = F)
-write.csv(test, "NCD-MP/baseline.csv", row.names = F)
+write.csv(b_rates, "app/base_rates.csv", row.names = F)
+write.csv(pop0, "app/pop.csv", row.names = F)
+write.csv(test, "app/baseline.csv", row.names = F)
 
 #plot 
 p_test<-test%>%group_by(year, cause, sex)%>%
@@ -492,11 +492,12 @@ for(i in ints){
   
 }
 
-write.csv(out.df, "NCD-MP/tobacco.csv", row.names = F)
 
 df_out<-out.df%>%group_by(year, Code)%>%
   summarise(dead = sum(dead),
             newcases = sum(newcases))
+
+write.csv(df_out, "app/results.csv", row.names = F)
 
 baseline<-df_out%>%filter(Code==0)
 
